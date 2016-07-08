@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>image</key>
+			<string>more_icon_share~iphone</string>
+			<key>title</key>
+			<string>邀请好友使用无聊日报</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>more_icon_score~iphone</string>
+			<key>title</key>
+			<string>给我们评分吧</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>more_icon_feedback~iphone</string>
+			<key>title</key>
+			<string>意见反馈</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>image</key>
+			<string>checkUserType_icon_identity~iphone</string>
+			<key>title</key>
+			<string>我的身份</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>more_icon_notification~iphone</string>
+			<key>title</key>
+			<string>接收消息提醒</string>
+		</dict>
+		<dict>
+			<key>image</key>
+			<string>more_icon_clear~iphone</string>
+			<key>title</key>
+			<string>清除缓存</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>image</key>
+			<string>more_icon_about~iphone</string>
+			<key>title</key>
+			<string>关于无聊日报</string>
+		</dict>
+	</array>
+</array>
+</plist>

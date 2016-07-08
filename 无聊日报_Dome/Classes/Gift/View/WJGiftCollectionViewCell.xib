@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="gTV-IL-0wX" customClass="WJGiftCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="173" height="240"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="173" height="240"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ang-ZD-qfW">
+                        <rect key="frame" x="0.0" y="0.0" width="173" height="240"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CLs-96-DCM">
+                                <rect key="frame" x="0.0" y="0.0" width="173" height="163"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gmz-mv-Foh">
+                                <rect key="frame" x="126" y="214" width="45" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="9R9-RF-jOr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="000" image="Search_GiftBtn_Default~iphone">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="likeBtnClick:" destination="gTV-IL-0wX" eventType="touchUpInside" id="LH3-Fp-jSb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdR-QI-R7I">
+                                <rect key="frame" x="8" y="168" width="157" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="cAX-5d-790"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwB-Tf-SY5">
+                                <rect key="frame" x="8" y="214" width="64" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="SXo-cv-ma8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="00000">
+                                    <color key="titleColor" red="1" green="0.29197332710000001" blue="0.2207348851" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vdR-QI-R7I" firstAttribute="centerX" secondItem="CLs-96-DCM" secondAttribute="centerX" id="8BZ-kT-yQw"/>
+                            <constraint firstItem="Gmz-mv-Foh" firstAttribute="baseline" secondItem="vwB-Tf-SY5" secondAttribute="firstBaseline" id="EYK-O7-Mil"/>
+                            <constraint firstItem="vwB-Tf-SY5" firstAttribute="top" secondItem="vdR-QI-R7I" secondAttribute="bottom" constant="8" symbolic="YES" id="G3Y-6E-eGw"/>
+                            <constraint firstItem="CLs-96-DCM" firstAttribute="leading" secondItem="ang-ZD-qfW" secondAttribute="leading" id="IgP-1D-Fps"/>
+                            <constraint firstItem="Gmz-mv-Foh" firstAttribute="leading" secondItem="vwB-Tf-SY5" secondAttribute="trailing" constant="54" id="MCC-mp-hR0"/>
+                            <constraint firstAttribute="trailing" secondItem="CLs-96-DCM" secondAttribute="trailing" id="NlK-N8-nnH"/>
+                            <constraint firstItem="vwB-Tf-SY5" firstAttribute="leading" secondItem="ang-ZD-qfW" secondAttribute="leading" constant="8" id="PQi-Fk-tGX"/>
+                            <constraint firstItem="Gmz-mv-Foh" firstAttribute="top" secondItem="vwB-Tf-SY5" secondAttribute="top" id="VXu-wQ-AZH"/>
+                            <constraint firstAttribute="bottom" secondItem="vwB-Tf-SY5" secondAttribute="bottom" constant="4" id="XlH-tr-9dT"/>
+                            <constraint firstAttribute="trailing" secondItem="Gmz-mv-Foh" secondAttribute="trailing" constant="2" id="ZLr-3j-22F"/>
+                            <constraint firstItem="vdR-QI-R7I" firstAttribute="leading" secondItem="ang-ZD-qfW" secondAttribute="leadingMargin" id="cgp-5w-SEV"/>
+                            <constraint firstItem="CLs-96-DCM" firstAttribute="top" secondItem="ang-ZD-qfW" secondAttribute="top" id="gDg-KE-oO0"/>
+                            <constraint firstItem="vdR-QI-R7I" firstAttribute="top" secondItem="CLs-96-DCM" secondAttribute="bottom" constant="5" id="rJa-AR-q6n"/>
+                            <constraint firstItem="vwB-Tf-SY5" firstAttribute="baseline" secondItem="Gmz-mv-Foh" secondAttribute="firstBaseline" id="xVG-JI-kqY"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ang-ZD-qfW" secondAttribute="trailing" id="4vi-HJ-Drc"/>
+                <constraint firstItem="ang-ZD-qfW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Cx8-P6-IPV"/>
+                <constraint firstAttribute="bottom" secondItem="ang-ZD-qfW" secondAttribute="bottom" id="S3e-fB-LgC"/>
+                <constraint firstItem="ang-ZD-qfW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mrg-Gv-KHi"/>
+            </constraints>
+            <size key="customSize" width="50" height="48"/>
+            <connections>
+                <outlet property="imgView" destination="CLs-96-DCM" id="qJi-mE-48g"/>
+                <outlet property="likeBtn" destination="Gmz-mv-Foh" id="bgM-Ha-E8u"/>
+                <outlet property="nameLabel" destination="vdR-QI-R7I" id="JV3-eJ-wyX"/>
+                <outlet property="priceBtn" destination="vwB-Tf-SY5" id="OvE-XD-8oQ"/>
+            </connections>
+            <point key="canvasLocation" x="822.5" y="575"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Search_GiftBtn_Default~iphone" width="12" height="10"/>
+    </resources>
+</document>
