@@ -30,7 +30,7 @@
 // 未登录状态底部视图
 @property (nonatomic,strong) UIView * unloginView;
 // 判断点击的是哪个标签
-@property (nonatomic,assign) BOOL btnFlag;
+@property (nonatomic,assign) BOOL isLeftTbView;
 // cell数据模型
 @property (nonatomic,strong) NSMutableArray * rightCellDataArr;
 @property (nonatomic,strong) NSMutableArray * leftCellDataArr;
@@ -235,7 +235,7 @@
     [UIView animateWithDuration:0 animations:^{
         _redLine.transform = CGAffineTransformMakeTranslation(SCREEN_WIDTH/2, 0);}];
     // 切换cell内容
-    self.btnFlag = NO;
+    self.isLeftTbView = NO;
     [self reloadTableView:self.rightCellDataArr.count];
 }
 // 喜欢的专题按钮
@@ -245,12 +245,15 @@
         _redLine.transform = CGAffineTransformMakeTranslation(0, 0);
     }];
     // 切换cell 内容
-    self.btnFlag = YES;
+    self.isLeftTbView = YES;
     [self reloadTableView:self.leftCellDataArr.count];
     
 }
 // 点击登录视图
 -(void)loginViewClick{
+    
+    
+    self.tableView.editing = !self.tableView.editing;
     
     if (!self.isLogining) {
         // 跳转登录页面
@@ -393,7 +396,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    if (self.btnFlag) {
+    if (self.isLeftTbView) {
         return self.leftCellDataArr.count;
     }else{
     
@@ -403,7 +406,7 @@
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    if (self.btnFlag) {// 喜欢的商品
+    if (self.isLeftTbView) {// 喜欢的商品
            NSString * ID = @"cell";
 
         UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
@@ -442,7 +445,7 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    if (self.btnFlag) {
+    if (self.isLeftTbView) {
         
         WJGiftDetailViewController * detailVc = [[WJGiftDetailViewController alloc] init];
         detailVc.giftData = self.leftCellDataArr[indexPath.row];
@@ -458,11 +461,11 @@
     }
 }
 
-// cell 的滑动编辑实现
+// cell 滑动删除实现
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
 
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        if (self.btnFlag) {//1.先删除数组里的数据
+        if (self.isLeftTbView) {//1.先删除数组里的数据
             [self.leftCellDataArr removeObjectAtIndex:indexPath.row];
         }else{
         
@@ -474,4 +477,29 @@
     
 }
 
+// cell 实现长按排序
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
+
+    
+    if (self.isLeftTbView) {
+        // 1、取出要移动的数据
+        id sourceData = self.leftCellDataArr[sourceIndexPath.row];
+        // 2、先从数组中删除
+        [self.leftCellDataArr removeObject:sourceData];
+        // 3、 然后添加到新的位置
+        [self.leftCellDataArr insertObject:sourceData atIndex:destinationIndexPath.row];
+        
+    }else{
+    
+        // 1、取出要移动的数据
+        id sourceData = self.rightCellDataArr[sourceIndexPath.row];
+        // 2、先从数组中删除
+        [self.rightCellDataArr removeObject:sourceData];
+        // 3、 然后添加到新的位置
+        [self.rightCellDataArr insertObject:sourceData atIndex:destinationIndexPath.row];
+
+    }
+    
+}
 @end

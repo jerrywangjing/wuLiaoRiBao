@@ -256,7 +256,7 @@ static CGFloat const maxTitleScale = 1.3;
     NSInteger leftIndex = offsetX / YCKScreenW;
     NSInteger rightIndex = leftIndex + 1;
     
-    NSLog(@"%zd,%zd",leftIndex,rightIndex);
+    //    NSLog(@"%zd,%zd",leftIndex,rightIndex);
     
     UIButton *leftButton = self.buttons[leftIndex];
     
