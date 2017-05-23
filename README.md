@@ -1,2 +1,2 @@
 # wuLiaoRiBao
-一个新闻类app demo程序
+### A simple news App writed by Objective-C。
